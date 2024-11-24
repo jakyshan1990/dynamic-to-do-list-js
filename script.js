@@ -21,7 +21,7 @@ if(taskText.length===0){
 list.append(rmvebtn);
 taskList.append(list);
 }
-
+taskInput.value="";
 
 }
 
