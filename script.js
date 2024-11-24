@@ -22,8 +22,14 @@ list.append(rmvebtn);
 taskList.append(list);
 }
 taskInput.value="";
-
 }
 
 
+addButton.addEventListener(onclick,addTask);
+taskInput.addEventListener(keypress,()=>{
+    if(Event.key=='Enter'){addTask;}
+});
+
+
+addTask();
 })
