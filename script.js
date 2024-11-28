@@ -14,7 +14,7 @@ if(taskText.length===0){
      list.textContent=taskText;
      const rmvebtn=document.createElement("button");
      rmvebtn.textContent="Remove";
-     rmvebtn.className='remove-btn';
+     rmvebtn.classList.add('remove-btn');
      rmvebtn.onclick=function(){ 
         list.remove();
      };
