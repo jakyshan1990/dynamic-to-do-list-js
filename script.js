@@ -18,11 +18,12 @@ if(taskText.length===0){
      rmvebtn.onclick=function(){ 
         list.remove();
      };
-list.append(rmvebtn);
-taskList.append(list);
+list.appendChild(rmvebtn);
+taskList.appendChild(list);
 }
 taskInput.value="";
 }
+
 
 
 addButton.addEventListener(onclick,addTask);
