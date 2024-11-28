@@ -27,7 +27,7 @@ taskInput.value="";
 
 
 addButton.addEventListener(onclick,addTask);
-taskInput.addEventListener("keypress",()=>{let key =Event.key;
+taskInput.addEventListener("keypress",(event)=>{let key =event.key;
     if(key=="Enter"){addTask;}
 });
 
