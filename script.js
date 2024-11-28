@@ -6,7 +6,7 @@ const taskList=document.getElementById("task-list");
 
 
 function addTask(){
-const taskText=taskInput.value.trim();
+const taskText=taskInput.value;
 if(taskText.length===0){
     alert("please enter a task");
 }else{
@@ -15,20 +15,21 @@ if(taskText.length===0){
      const rmvebtn=document.createElement("button");
      rmvebtn.textContent="Remove";
      rmvebtn.classList.add('remove-btn');
-     rmvebtn.onclick=function(){ 
-        list.remove();
-     };
-list.appendChild(rmvebtn);
-taskList.appendChild(list);
+                rmvebtn.onclick=function(){ 
+                    list.remove();
+                };
+     list.appendChild (rmvebtn);
+     taskList.appendChild (list);
+
 }
 taskInput.value="";
 }
 
 
 
-addButton.addEventListener(onclick,addTask);
-taskInput.addEventListener("keypress",(event)=>{let key =event.key;
-    if(key=="Enter"){addTask;}
+addButton.addEventListener("click",addTask);
+taskInput.addEventListener("keypress",(event)=>{let key1 =event.key;
+    if(key1=="Enter"){addTask();}
 });
 
 
