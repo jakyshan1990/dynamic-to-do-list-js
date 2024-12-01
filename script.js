@@ -21,6 +21,7 @@ if(taskText.length===0){
      list.appendChild (rmvebtn);
      taskList.appendChild (list);
      tasks.push(list);
+     JSON.stringify(tasks);
 
 }
 taskInput.value="";
