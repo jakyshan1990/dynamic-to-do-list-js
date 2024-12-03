@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded",()=>{
 const addButton=document.getElementById("add-task-btn");
 const taskInput=document.getElementById("task-input");
 const taskList=document.getElementById("task-list");
-const tasks=[];
+let tasks=[];
+//const localtasks='strings';
 
 function addTask(){
 const taskText=taskInput.value;
@@ -21,8 +22,8 @@ if(taskText.length===0){
      list.appendChild (rmvebtn);
      taskList.appendChild (list);
      tasks.push(list);
-     JSON.stringify(tasks);
-
+     //localtasks=JSON.stringify(tasks);
+     //localStorage.setItem(localtasks);
 }
 taskInput.value="";
 }
@@ -35,6 +36,7 @@ taskInput.addEventListener("keypress",(event)=>{let key1 =event.key;
 });
 addTask();
 
-localStorage.getItem('tasks');
+//tasks=JSON.parse( localStorage.getItem(localtasks) );
+console.log(tasks);
 
 })
