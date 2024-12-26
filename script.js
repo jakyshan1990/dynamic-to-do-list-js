@@ -29,8 +29,10 @@ if(!taskText){taskText=taskInput.value;
      const rmvebtn=document.createElement("button");
      rmvebtn.textContent="Remove";
      rmvebtn.classList.add('remove-btn');
-                rmvebtn.onclick=()=>list.remove();
-                
+                rmvebtn.onclick=()=>{
+                    list.remove();
+   removeTaskFromLocalStorage(taskText);
+                }
      list.appendChild (rmvebtn);
      taskList.appendChild (list);
      tasks.push(list);
@@ -48,6 +50,8 @@ if (save) {
 
 
 
+
+
 addButton.addEventListener("click",addTask);
 taskInput.addEventListener("keypress",(event)=>{let key1 =event.key;
     if(key1=="Enter"){addTask();}
@@ -56,6 +60,11 @@ addTask();
 loadTasks ();
 
 
+function removeTaskFromLocalStorage(taskText) {
+  const storedTasks = JSON.parse (localStorage.getItem ('tasks') || '[]');
+  const updatedTasks = storedTasks.filter (task => task !== taskText);
+  localStorage.setItem ('tasks', JSON.stringify (updatedTasks));
+}
 
 //tasks=JSON.parse( localStorage.getItem(localtasks) );
 //console.log(tasks);
